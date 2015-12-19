@@ -13,7 +13,8 @@ class AlumnoSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		$alumno = Alumno::create(['nombre'=>'manuel pinto','rut'=>'17896966-6']);
+		$alumno = Alumno::create(['nombre'=>'Wladimir Rodríguez','rut'=>'17896966-8','username'=>'wlarodri']);
+
 
 
 	}

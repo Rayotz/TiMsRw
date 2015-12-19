@@ -51,7 +51,7 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+</nav>
 
 	@yield('content')
 

@@ -14,10 +14,16 @@ class CreateAlumnosTable extends Migration {
 	{
 		Schema::create('alumnos', function(Blueprint $table)
 		{
-			$table->string('nombre',255);
-			$table->string('rut',11);
-			$table->increments('id');
+			$table->string('nombre_alumno',255);
+			$table->string('rut_alumno',12)->unique();
+			$table->string('clave_alumno',12);
+			$table->string('email')->unique();
+			$table->string('rol_primario',12);
+			$table->string('rol_secundario',12);
 			$table->timestamps();
+			$table->primary(['rut','email']);
+			$table->integer('id_grup')->unsigned();
+			$table->foreign('id_grup')->references('id_grupo')->on('grupo');
 		});
 	}
 

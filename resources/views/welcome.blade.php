@@ -40,7 +40,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">GG IZI</div>
+				<div class="title">GG IZI, REPORT TEAM</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
 		</div>

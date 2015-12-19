@@ -4,6 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alumno extends Model {
 
-	 protected $fillable=['nombre','rut'];
+protected $fillable=['nombre','rut','username'];
 
 }
