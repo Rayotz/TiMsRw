@@ -39,4 +39,5 @@ Route::resource('tipo','TipoController');
 //Rutas controladores de propuestas de proyecto del alumno
 //Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
 Route::controller('/registrarAlumno','controlladorRegistroAlumno');
+Route::controller('/','controladorLogin');
 
