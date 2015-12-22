@@ -16,7 +16,6 @@
         <input type="button" value="CANCELAR" id="boton2" onclick="javascript:cambia_de_pagina();"value="Volver a inicio"/>
 
 
-0
         <script>
             function cambia_de_pagina(){
                 alert("Será ud redireccionado a la pagina de inicio.")
