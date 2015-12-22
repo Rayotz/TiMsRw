@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -47,6 +48,26 @@ class controlladorRegistroAlumno extends Controller
             'rut'=> 'required|min:11|max:11|unique:user',
             'clave'=>'required|min:6|max:20|'
         );
+
+        $messages = array(
+            'required' => 'El campo :attribute es obligatorio.',
+            'min' => 'El campo :attribute no puede tener menos de :min carácteres.',
+            'email' => 'El campo :attribute debe ser un correo valido.',
+            'max' => 'El campo :attribute no puede tener mas de :max carácteres.' ,
+            'unique' => 'El mail ya está registrado',
+        );
+
+        $validation = Validator::make(Input::all(), $rules, $messages);
+
+        if($validation->fails()){
+            return Redirect::to('test.indexRegistroA')->with_errors($validation)->with_input();
+        }else{
+            $insert = user::insert_users($Nombre,$Correo,$Rut,$Clave);
+
+            if($insert){
+                return Redirect::to('test.indexRegistroA')->with('mensaje','Alumno registrado correctamente');
+            }
+        }
     }
 
 
