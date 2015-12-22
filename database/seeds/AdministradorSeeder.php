@@ -10,6 +10,6 @@ class AdministradorSeeder extends Seeder {
      */
     public function run()
     {
-        //$usuario = Usuario::create(['nombre'=>'Wladimir Rodríguez','rut'=>'17896966-8','username'=>'wlarodri']);
+        $administrador = Administrador::create(['adm_tipo'=>'3']);
     }
 }
