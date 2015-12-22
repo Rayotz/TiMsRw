@@ -25,7 +25,8 @@ Route::resource('alumno','AlumnosController');
 
 //Rutas controladores de propuestas de proyecto del profesor
 Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
-Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
-
 /*Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');*/
 Route::post("/Propuesta/profesor", 'PropuestaProfesorController@postValidacion');
+
+//Rutas controladores de propuestas de proyecto del alumno
+//Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
