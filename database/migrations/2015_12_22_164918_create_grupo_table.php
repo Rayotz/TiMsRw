@@ -14,7 +14,7 @@ class CreateGrupoTable extends Migration {
 	public function up()
 	{
 		Schema::create('grupos', function (Blueprint $table) {
-			$table->integer('gru_id');
+			$table->integer('gru_id')->unsigned();;
 			$table->integer('gru_numero');
 			$table->integer('gru_tamano_grupo');
 			$table->timestamps();
