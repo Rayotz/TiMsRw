@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGrupoTable extends Migration {
+class CreateAdministradorTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,9 @@ class CreateGrupoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('grupos', function(Blueprint $table)
-		{
-			$table->integer('id_grupo',100)->unique();
-			$table->integer('id_tem',100);
+		Schema::create('administrador', function (Blueprint $table) {
+			$table->integer('adm_tipo');
 			$table->timestamps();
-			$table->primary(['id_grupo']);
-			$table->foreign('id_tem')->references('id_tema')->on('tema');
 		});
 	}
 
@@ -29,7 +25,7 @@ class CreateGrupoTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('administrador');
 	}
 
 }
