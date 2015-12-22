@@ -22,3 +22,6 @@ Route::controllers([
 
 //rutas alumnos
 Route::resource('alumno','AlumnosController');
+
+Route::controller('/registrarAlumno','controlladorRegistroAlumno');
+
