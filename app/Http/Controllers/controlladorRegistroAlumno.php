@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class controlladorRegistroAlumno extends Controller
 {
-    protected $layout = 'layouts.master';
+    protected $layout = 'layouts.masterRegistroA';
 
     public function getIndex()
     {
-        return $this->layout = view('test.index');
+        return $this->layout = view('test.indexRegistroA');
     }
 
     /**
