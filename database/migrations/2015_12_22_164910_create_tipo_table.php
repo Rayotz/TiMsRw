@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTipoTable extends Migration {
 
@@ -27,7 +28,7 @@ class CreateTipoTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('tipo');
+		//Schema::drop('tipo');
 	}
 
 }

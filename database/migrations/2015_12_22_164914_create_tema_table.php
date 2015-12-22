@@ -28,7 +28,7 @@ class CreateTemaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('tema');
+		//Schema::drop('tema');
 	}
 
 }
