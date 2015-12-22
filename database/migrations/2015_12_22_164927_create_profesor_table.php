@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateProfesorTable extends Migration {
 
@@ -25,7 +26,7 @@ class CreateProfesorTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('profesor');
+		//Schema::drop('profesor');
 	}
 
 }

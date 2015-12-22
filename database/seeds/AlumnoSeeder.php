@@ -10,6 +10,7 @@ class AlumnoSeeder extends Seeder {
      */
     public function run()
     {
-        //$usuario = Usuario::create(['nombre'=>'Wladimir Rodríguez','rut'=>'17896966-8','username'=>'wlarodri']);
+        //$usuario = Usuario::create(['nombre'=>'Wladimir Rodríguez',
+          //  'rut'=>'17896966-8','username'=>'wlarodri']);
     }
 }
