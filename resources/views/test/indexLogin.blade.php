@@ -17,14 +17,14 @@ SAGGAP
     <script>
         function RegistroA(){
 
-            location.href="http://sitio-dos.dev/registrarAlumno"
+            location.href="/registrarAlumno"
         }
     </script>
 
     <script>
         function Registrop(){
 
-            location.href="http://sitio-dos.dev/registrarProfe"
+            location.href="/registrarProfe"
         }
     </script>
 
