@@ -10,10 +10,22 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+//Rutas controladores de propuestas de proyecto del profesor
 Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
+Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');
+Route::post("/Propuesta/profesor", 'PropuestaProfesorController@postValidacion');
+
+//Rutas controladores de propuestas de proyecto del alumno
+Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
+Route::get("/Propuesta/alumno", 'PropuestaAlumnoController@getValidacion2');
+Route::post("/Propuesta/alumno", 'PropuestaAlumnoController@postValidacion2');
+
+
 Route::controller('/registrarProfesor','controladorRegistroProfesor');
 Route::controller('/registrarAlumno','controlladorRegistroAlumno');
 Route::controller('/','controladorLogin');
+
 //Route::get('/', 'WelcomeController@index');
 //Route::get('home', 'HomeController@index');
 
@@ -33,12 +45,7 @@ Route::resource('tipo','TiposController');
 
 
 
-//Rutas controladores de propuestas de proyecto del profesor
-Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
-Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');
-Route::post("/Propuesta/profesor", 'PropuestaProfesorController@postValidacion');
 
 
-//Rutas controladores de propuestas de proyecto del alumno
-//Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
+
 
