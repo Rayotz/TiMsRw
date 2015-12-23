@@ -8,34 +8,6 @@
     </title>
     @yield('css')
 
-    <script LANGUAGE="JavaScript">
-        extArray = new Array(".pdf");
-        mierror = "";
-        function limitAttach(form, file){
-
-            if(!file){
-                alert("No se ha seleccionado ningun archivo.");
-            }else{
-                allowSubmit = false;
-                if(!file) return;
-                while(file.indexOf("\\") != -1)
-                    file = file.slice(file.indexOf("\\") + 1);
-                ext = file.slice(file.indexOf(".")).toLowerCase();
-                for(var i=0; i<extArray.length; i++){
-                    if(extArray[i] == ext){ allowSubmit = true; break}
-                }
-                if(allowSubmit) form.submit;
-                else
-                    alert("Se permiten unicamente archivos con la extencion: "
-                            + (extArray.join("  ")) + "\nPor favor, seleccione otro archivo "
-                            + "e intente de nuevo.");
-            }
-        }
-
-
-    </script>
-
-
 @if(Session::has('mensaje'))
         <div class="alert-box success">
             <h2>{{\Illuminate\Support\Facades\Session::get('mensaje')}}</h2>
