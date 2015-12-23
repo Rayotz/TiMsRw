@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class AdministradorController extends Controller {
+class AdministradorsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,8 +15,8 @@ class AdministradorController extends Controller {
 	 */
 	public function index()
 	{
-		$administrador=Administrador::all();
-		return view('administrador.index',compact('administrador'));
+		$administradors=Administrador::all();
+		return view('administradors.index',compact('administradors'));
 	}
 
 	/**

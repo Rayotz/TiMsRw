@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class TemaController extends Controller {
+class TemasController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,8 +15,8 @@ class TemaController extends Controller {
 	 */
 	public function index()
 	{
-		$tema=Tema::all();
-		return view('tema.index',compact('tema'));
+		$temas=Tema::all();
+		return view('temas.index',compact('temas'));
 	}
 
 	/**

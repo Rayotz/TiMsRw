@@ -13,7 +13,7 @@ class CreateAdministradorTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('administrador', function (Blueprint $table) {
+		Schema::create('administradors', function (Blueprint $table) {
 			$table->integer('adm_tipo');
 			$table->timestamps();
 		});
@@ -26,7 +26,7 @@ class CreateAdministradorTable extends Migration {
 	 */
 	public function down()
 	{
-		//Schema::drop('administrador');
+		//Schema::drop('administradors');
 	}
 
 }

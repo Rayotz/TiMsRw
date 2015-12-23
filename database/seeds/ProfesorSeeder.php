@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Database\Seeder;
-//use Illuminate\Database\Eloquent\Model;
-//use App\Profesor;
+use Illuminate\Database\Eloquent\Model;
+use App\Profesor;
+
 class ProfesorSeeder extends Seeder {
     /**
      * Run the database seeds.
@@ -10,6 +11,6 @@ class ProfesorSeeder extends Seeder {
      */
     public function run()
     {
-        $usuario = Usuario::create(['pro_tipo'=>2]);
+        $profesor = Profesor::create(['pro_tipo'=>2]);
     }
 }

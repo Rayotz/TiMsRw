@@ -23,23 +23,21 @@ Route::controllers([
 //rutas tablas
 Route::resource('alumno','AlumnosController');
 Route::resource('usuario','UsuariosController');
-Route::resource('administrador','AdministradorController');
-Route::resource('grupo','GrupoController');
-Route::resource('profesor','ProfesorController');
-Route::resource('tema','TemaController');
-Route::resource('tipo','TipoController');
+Route::resource('administrador','AdministradorsController');
+Route::resource('grupo','GruposController');
+Route::resource('profesor','ProfesorsController');
+Route::resource('tema','TemasController');
+Route::resource('tipo','TiposController');
 
 
 
 //Rutas controladores de propuestas de proyecto del profesor
-//Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
-/*Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');*/
-//Route::post("/Propuesta/profesor", 'PropuestaProfesorController@postValidacion');
+Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');
+Route::post("/Propuesta/profesor", 'PropuestaProfesorController@postValidacion');
+Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
 
 //Rutas controladores de propuestas de proyecto del alumno
 //Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
-
 Route::controller('/registrarAlumno','controlladorRegistroAlumno');
-
 Route::controller('/','controladorLogin');
 
