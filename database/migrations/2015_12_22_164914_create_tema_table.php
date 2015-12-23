@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTemaTable extends Migration {
 
@@ -12,13 +13,11 @@ class CreateTemaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('temas', function(Blueprint $table)
-		{
-			$table->integer('id_tem', 100)->unique();
-			$table->string('titulo', 255);
-			$table->boolean('estado_tema');
-			$table->longText('descripcion');
-			$table->primary(['rutid_tem']);
+		Schema::create('temas', function (Blueprint $table) {
+			$table->increments('tem_id');
+			$table->string('tem_nombre_proyecto',60);
+			$table->string('tem_ruta_proyecto',60);
+			$table->timestamps();
 		});
 	}
 
@@ -29,7 +28,7 @@ class CreateTemaTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		//Schema::drop('temas');
 	}
 
 }

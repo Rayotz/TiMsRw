@@ -20,8 +20,16 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-//rutas alumnos
+//rutas tablas
 Route::resource('alumno','AlumnosController');
+Route::resource('usuario','UsuariosController');
+Route::resource('administrador','AdministradorsController');
+Route::resource('grupo','GruposController');
+Route::resource('profesor','ProfesorsController');
+Route::resource('tema','TemasController');
+Route::resource('tipo','TiposController');
+
+
 
 //Rutas controladores de propuestas de proyecto del profesor
 Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');

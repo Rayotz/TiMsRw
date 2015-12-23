@@ -1,0 +1,66 @@
+body{
+    background-repeat: no-repeat;
+    background-image: url("fondo_saggap_ubb.png");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+form {
+    width: 450px;
+    background: rgba(0, 0, 0, 0.17);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin: 20px auto auto;
+    border-radius: 7px;
+}
+
+h2{
+    color: #faffff;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+
+input, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#botonA{
+    background: #2ca02c;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+#botonA:hover{
+    cursor: pointer;
+}
+
+#botonB{
+    background: #2ca02c;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+#botonB:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 480px){
+    form{
+        width: 100%;
+        height: 100%;
+    }
+}
