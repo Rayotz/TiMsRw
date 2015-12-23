@@ -24,7 +24,7 @@
                 for(var i=0; i<extArray.length; i++){
                     if(extArray[i] == ext){ allowSubmit = true; break}
                 }
-                if(allowSubmit) form.submit();
+                if(allowSubmit) form.submit;
                 else
                     alert("Se permiten unicamente archivos con la extencion: "
                             + (extArray.join("  ")) + "\nPor favor, seleccione otro archivo "
@@ -35,6 +35,12 @@
 
     </script>
 
+
+@if(Session::has('mensaje'))
+        <div class="alert-box success">
+            <h2>{{\Illuminate\Support\Facades\Session::get('mensaje')}}</h2>
+        </div>
+    @endif
 
 </head>
     <body>
