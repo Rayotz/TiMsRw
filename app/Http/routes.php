@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
+Route::controller('/registrarProfesor','controladorRegistroProfesor');
+Route::controller('/registrarAlumno','controlladorRegistroAlumno');
+Route::controller('/','controladorLogin');
+//Route::get('/', 'WelcomeController@index');
+//Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -36,6 +38,7 @@ Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');
 Route::post("/Propuesta/profesor", 'PropuestaProfesorController@postValidacion');
 Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
 
-
 //Rutas controladores de propuestas de proyecto del alumno
 //Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
+
+Route::controller('/','controladorLogin');

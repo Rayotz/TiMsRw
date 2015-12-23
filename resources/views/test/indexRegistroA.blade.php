@@ -6,7 +6,7 @@
 
 @section('formulario_alumno')
     <form>
-        <h2>Registro</h2>
+        <h2>Registro Alumnos</h2>
         <input type="text" name="Nombre" placeholder="Nombre">
         <input type="email" name="Correo" placeholder="Correo">
         <input type="text" name="Rut" placeholder="Rut">
