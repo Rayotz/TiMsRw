@@ -9,8 +9,9 @@ SAGGAP
     <h2>Bienvenido a SAGGAP</h2>
     <input type="text" name="Rut" placeholder="Rut">
     <input type="password" name="pass" placeholder="Ingrese clave">
-    <input type="button" value="ACEPTAR" id="boton" >
-    <input type="button" value="CANCELAR" id="boton2" onclick="javascript:RegistroA();"value=""/>
+    <input type="submit" value="Ingresar" id="boton" >
+    <h4>¿Alumno por Registrar? Hazlo Debajo!</h4>
+    <input type="button" value="Registrar" id="boton2" onclick="javascript:RegistroA();"value=""/>
 
 
     <script>
