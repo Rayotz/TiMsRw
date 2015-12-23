@@ -37,16 +37,20 @@ class controlladorRegistroAlumno extends Controller
      */
 
     public function action_user(){
-        $Nombre=e(Input::get('nombre'));
-        $Correo=e(Input::get('correo'));
-        $Rut=e(Input::get('rut'));
-        $Clave=e(Input::get('clave'));
+        $Rut=e(Input::get('usu_rut'));
+        $Nombre=e(Input::get('usu_nombre'));
+        $Apellido=e(Input::get('usu_apellido'));
+        $Correo=e(Input::get('usu_correo'));
+        $Clave=e(Input::get('usu_clave'));
+        $Tipo=e(Input::get('usu_tipo'));
 
         $rules=array(
-            'nombre'=>'required|min:20|max:60',
-            'correo'=>'required|min:6|max:20|unique:user',
-            'rut'=> 'required|min:11|max:11|unique:user',
-            'clave'=>'required|min:6|max:20|'
+            'usu_rut'=> 'required|min:11|max:11|unique:user',
+            'usu_nombre'=>'required|min:20|max:60',
+            'usu_apellido'=>'required|min:20|max:60',
+            'usu_correo'=>'required|min:6|max:20|unique:user',
+            'usu_clave'=>'required|min:6|max:20|',
+            'usu_tipo'=>'required|min:5|max:60',
         );
 
         $messages = array(
