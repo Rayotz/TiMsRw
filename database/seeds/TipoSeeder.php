@@ -10,6 +10,6 @@ class TipoSeeder extends Seeder {
      */
     public function run()
     {
-        //$usuario = Usuario::create(['nombre'=>'Wladimir Rodríguez','rut'=>'17896966-8','username'=>'wlarodri']);
+        $tipo = Tipo::create(['tip_id'=>'1']);
     }
 }

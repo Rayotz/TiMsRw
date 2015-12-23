@@ -20,8 +20,14 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-//rutas alumnos
+//rutas tablas
 Route::resource('alumno','AlumnosController');
+Route::resource('usuario','UsuariosController');
+Route::resource('administrador','AdministradorController');
+Route::resource('grupo','GrupoController');
+Route::resource('profesor','ProfesorController');
+Route::resource('tema','TemaController');
+Route::resource('tipo','TipoController');
 
 
 
@@ -33,4 +39,5 @@ Route::resource('alumno','AlumnosController');
 //Rutas controladores de propuestas de proyecto del alumno
 //Route::controller("/Propuesta/alumno", "PropuestaAlumnoController");
 Route::controller('/registrarAlumno','controlladorRegistroAlumno');
+Route::controller('/','controladorLogin');
 

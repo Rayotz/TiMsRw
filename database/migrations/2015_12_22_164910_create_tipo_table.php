@@ -15,7 +15,6 @@ class CreateTipoTable extends Migration {
 	{
 		Schema::create('tipos', function (Blueprint $table) {
 			$table->integer('tip_id');
-			$table->integer('id');
 			$table->timestamps();
 			$table->primary('tip_id');
 		});
