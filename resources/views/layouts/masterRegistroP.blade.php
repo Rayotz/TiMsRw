@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        @yield('formulario_alumno')
+        @yield('formulario_profesor')
     </div>
 </body>
 </html>
