@@ -27,6 +27,5 @@ SAGGAP
             location.href="http://sitio-dos.dev/registrarProfe"
         }
     </script>
-
-
 </form>
+@stop

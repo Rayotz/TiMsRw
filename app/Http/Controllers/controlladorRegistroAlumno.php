@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Usuario;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -24,10 +27,7 @@ class controlladorRegistroAlumno extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        /*return view ('alumno.create');*/
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -77,22 +77,12 @@ class controlladorRegistroAlumno extends Controller
 
     public function store(Request $request)
     {
-        $data = Request::all();
+        $input = Request::all();
+        $input ['published_at']=Carbon::now();
 
-        $rules = array(
-        'Nombre' => 'required|max:255',
-        'Correo' => 'required',
-        'Rut'=> 'required|max:11',
-        'Clave'=> 'required',
-        );
+        Usuario::create($input);
 
-        $v = Validator::make($data,$rules);
-
-        if ($v->fails()){
-            return redirect()->back()
-                ->withErrors($v->errors())
-                ->withInput(Request::except('password'));
-        }
+        return redirect('registrarAlumno');
     }
 
     
@@ -105,7 +95,7 @@ class controlladorRegistroAlumno extends Controller
      */
     public function show($id)
     {
-        //
+        $usuario = Usuario::findOrFail($id);
     }
 
     /**
