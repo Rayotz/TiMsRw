@@ -13,7 +13,7 @@ class CreateTemaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tema', function (Blueprint $table) {
+		Schema::create('temas', function (Blueprint $table) {
 			$table->increments('tem_id');
 			$table->string('tem_nombre_proyecto',60);
 			$table->string('tem_ruta_proyecto',60);
@@ -28,7 +28,7 @@ class CreateTemaTable extends Migration {
 	 */
 	public function down()
 	{
-		//Schema::drop('tema');
+		//Schema::drop('temas');
 	}
 
 }

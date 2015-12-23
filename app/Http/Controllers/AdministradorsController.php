@@ -15,7 +15,7 @@ class AdministradorsController extends Controller {
 	 */
 	public function index()
 	{
-		$administradors=Administradors::all();
+		$administradors=Administrador::all();
 		return view('administradors.index',compact('administradors'));
 	}
 

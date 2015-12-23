@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tipos extends Model {
+class Tipo extends Model {
+
 
     protected $fillable=['tip_id'];
 
