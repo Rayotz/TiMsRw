@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 
+
 class controlladorRegistroAlumno extends Controller
 {
     protected $layout = 'layouts.masterRegistroA';
@@ -23,14 +24,26 @@ class controlladorRegistroAlumno extends Controller
     }
 
 
+    public function create(){
+        return view('');
+    }
+
     public function store(Request $request)
     {
-        $input = Request::all();
-        $input ['published_at']=Carbon::now();
+        $usuario = new Usuario();
+        $usuario = \Input::get('rut');
+        $usuario = \Input::get('nombre');
+        $usuario = \Input::get('apellido');
+        $usuario = \Input::get('correo');
+        $usuario = \Input::get('clave');
+        $usuario = \Input::get('Tipo_usuario');
 
-        Usuario::create($input);
-
-        return redirect('registrarAlumno');
+        if($usuario->save()){
+            return 'exito';
+        }
+        else{
+            return 'no';
+        }
     }
 
     

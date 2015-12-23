@@ -1,7 +1,7 @@
 @extends('layouts.masterLogin')
 
 @section('titulo')
-SAGGAP
+    SAGGAP
 @stop
 
 @section('formulario')

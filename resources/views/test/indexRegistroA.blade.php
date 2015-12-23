@@ -5,14 +5,22 @@
 @stop
 
 @section('formulario_alumno')
-    <form>
-        <h2>Registro Alumnos</h2>
-        <input type="text" name="Nombre" placeholder="Nombre">
-        <input type="email" name="Correo" placeholder="Correo">
-        <input type="text" name="Rut" placeholder="Rut">
-        <input type="password" name="pass" placeholder="Ingrese clave">
-        <input type="password" name="pass" placeholder="Repita su clave">
-        <input type="button" value="ACEPTAR" id="boton" >
+    <form  method="POST" action="http://sitio-dos.dev/">
+
+        <h2>Registro Alumno</h2>
+        <input type="text" name="rut" placeholder="Ingrese rut">
+        <input type="text" name="nombre" placeholder="Ingrese nombres">
+        <input type="text" name="apellido" placeholder="Ingrese apellidos">
+        <input type="email" name="correo" placeholder="Ingrese correo">
+        <input type="password" name="clave" placeholder="Ingrese clave">
+
+        Tipo Usuario: <select tipo="Tipo_Usuario">
+            <option value="1">Alumno</option>
+        </select><br><br>
+
+
+        <input name="submit" value="Registrar Alumno" type="submit" id="boton">
+
         <input type="button" value="CANCELAR" id="boton2" onclick="javascript:cambia_de_pagina();"value="Volver a inicio"/>
 
 
@@ -22,10 +30,5 @@
                 location.href="http://sitio-dos.dev"
             }
         </script>
-
-
     </form>
-
-
-
-    @stop
+@stop

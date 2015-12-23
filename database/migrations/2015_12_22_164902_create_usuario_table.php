@@ -21,7 +21,7 @@ class CreateUsuarioTable extends Migration {
 			$table->string('usu_clave',20);
 			$table->integer('usu_tipo');
 			$table->timestamps();
-			$table->primary('usu_rut');
+			$table->primaryKey('usu_rut');
 		});
 	}
 
