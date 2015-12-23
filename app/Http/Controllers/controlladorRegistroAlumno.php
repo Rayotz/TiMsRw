@@ -22,58 +22,6 @@ class controlladorRegistroAlumno extends Controller
         return $this->layout = view('test.indexRegistroA');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-    public function action_user(){
-        $Rut=e(Input::get('usu_rut'));
-        $Nombre=e(Input::get('usu_nombre'));
-        $Apellido=e(Input::get('usu_apellido'));
-        $Correo=e(Input::get('usu_correo'));
-        $Clave=e(Input::get('usu_clave'));
-        $Tipo=e(Input::get('usu_tipo'));
-
-        $rules=array(
-            'usu_rut'=> 'required|min:11|max:11|unique:user',
-            'usu_nombre'=>'required|min:20|max:60',
-            'usu_apellido'=>'required|min:20|max:60',
-            'usu_correo'=>'required|min:6|max:20|unique:user',
-            'usu_clave'=>'required|min:6|max:20|',
-            'usu_tipo'=>'required|min:5|max:60',
-        );
-
-        $messages = array(
-            'required' => 'El campo :attribute es obligatorio.',
-            'min' => 'El campo :attribute no puede tener menos de :min carácteres.',
-            'email' => 'El campo :attribute debe ser un correo valido.',
-            'max' => 'El campo :attribute no puede tener mas de :max carácteres.' ,
-            'unique' => 'El mail ya está registrado',
-        );
-
-        $validation = Validator::make(Input::all(), $rules, $messages);
-
-        if($validation->fails()){
-            return Redirect::to('test.indexRegistroA')->with_errors($validation)->with_input();
-        }else{
-            $insert = user::insert_users($Nombre,$Correo,$Rut,$Clave);
-
-            if($insert){
-                return Redirect::to('test.indexRegistroA')->with('mensaje','Alumno registrado correctamente');
-            }
-        }
-    }
-
 
     public function store(Request $request)
     {
