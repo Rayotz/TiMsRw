@@ -24,9 +24,9 @@ Route::resource('alumno','AlumnosController');
 Route::resource('usuario','UsuariosController');
 Route::resource('administrador','AdministradorsController');
 Route::resource('grupo','GruposController');
-Route::resource('profesor','ProfesorsController');
+Route::resource('profesor','ProfesorController');
 Route::resource('tema','TemasController');
-Route::resource('tipo','TiposController');
+//Route::resource('tipo','TiposController');
 //Rutas controladores de propuestas de proyecto del profesor
 Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
 Route::get("/Propuesta/profesor", 'PropuestaProfesorController@getValidacion');
