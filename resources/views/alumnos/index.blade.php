@@ -2,6 +2,4 @@
     {!! $alumno->nombre !!}
     {!! $alumno->username !!}
     {!! $alumno->rut !!}
-
-
     @endforeach

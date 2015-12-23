@@ -10,6 +10,7 @@ class TemaSeeder extends Seeder {
      */
     public function run()
     {
-        //$usuario = Usuario::create(['nombre'=>'Wladimir Rodríguez','rut'=>'17896966-8','username'=>'wlarodri']);
+        $tema = Tema::create(['tem_nombre_proyecto'=>'ISW'],['tem_ruta_proyecto'=>'null']);
+        $tema = Tema::create(['tem_nombre_proyecto'=>'ISW2'],['tem_ruta_proyecto'=>'null']);
     }
 }

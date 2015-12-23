@@ -10,6 +10,7 @@ class GrupoSeeder extends Seeder {
      */
     public function run()
     {
-        //$usuario = Usuario::create(['nombre'=>'Wladimir Rodríguez','rut'=>'17896966-8','username'=>'wlarodri']);
+        $grupo = Grupo::create(['gru_id'=>5,'gru_numero'=>1,'gru_tamano_grupo'=>3]);
+        $grupo = Grupo::create(['gru_id'=>6,'gru_numero'=>2,'gru_tamano_grupo'=>2]);
     }
 }
