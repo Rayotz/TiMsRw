@@ -34,9 +34,13 @@ class GruposController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CreateGrupoRequest $request)
 	{
-		//
+		$grupo = new Grupo();
+        $grupo->gru_numero = $request->input('gru_numero');
+        $grupo->gru_tamano_gru =$request->input('gru_tamano_gru');
+        $grupo->create_at =$request->input('create_at');
+        $grupo->updated_at=$request->input('updated_at');
 	}
 
 	/**

@@ -17,6 +17,8 @@ class CreateGrupoTable extends Migration {
 			$table->integer('gru_id')->unsigned();;
 			$table->integer('gru_numero');
 			$table->integer('gru_tamano_grupo');
+			$table->date('create_at');
+			$table->date('updated_at');
 			$table->timestamps();
 			$table->primary('gru_id');
 		});

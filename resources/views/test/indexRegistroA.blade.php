@@ -30,7 +30,7 @@
         <script>
             function cambia_de_pagina(){
                 alert("Será ud redireccionado a la pagina de inicio.")
-                location.href="http://sitio-dos.dev"
+                location.href="http://sitio-uno.dev"
             }
         </script>
     </form>
