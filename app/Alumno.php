@@ -4,6 +4,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alumno extends Model {
 
-    protected $fillable=['alu_rol','alu_grupo','alu_tipo'];
+    protected $table = 'alumnos';
+
+    public static $rol=array(
+        "a"=>'analista',
+        "p"=>'programador',
+        "d"=>'diseñador',
+        "o"=>'otro'
+
+    );
+
+    protected $fillable =[
+        'nombre','apellido',
+        'rut',
+        'rol',
+        'email'
+    ];
+
+
 
 }

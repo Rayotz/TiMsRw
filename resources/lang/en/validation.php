@@ -88,6 +88,7 @@ return [
 	'custom' => [
 		'attribute-name' => [
 			'rule-name' => 'custom-message',
+			'alpha_spaces' => 'The :attribute can only alphabetic or space characters'
 		],
 	],
 

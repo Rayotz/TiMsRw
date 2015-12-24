@@ -1,4 +1,4 @@
-@extends('layouts.masterRegistroP')
+@extends('index.blade.php')
 
 @section('titulo')
     SAGGAP

@@ -3,19 +3,16 @@
 use App\Alumno;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateAlumnoRequest;
+use Illuminate\Session;
 
 use Illuminate\Http\Request;
 
 class AlumnosController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		$alumnos=Alumno::all();
+		$alumnos=Alumno::paginate(15);
 		return view('alumnos.index',compact('alumnos'));
 	}
 
@@ -26,18 +23,17 @@ class AlumnosController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('alumnos.create');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function store(CreateAlumnoRequest $request)
 	{
-		//
+		Alumno::create($request->all());
+		Session::flash('flash_message','Datos almacenados exitosamente');
+		return redirect()->to('alumno')->with('new_token', csrf_token());
+
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -47,8 +43,10 @@ class AlumnosController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$alumno= Alumno::find($id);
+		return view('alumnos.show',compact('alumno',$alumno));
 	}
+
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -56,20 +54,19 @@ class AlumnosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public
+	function edit($id)
 	{
-		//
+		$alumno = Alumno::find($id);
+		return view('alumnos.edit', compact('alumno', $alumno));
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+	public function update($id, CreateAlumnoRequest $request)
 	{
-		//
+		$alumno = Alumno::findOrFail($id);
+		$alumno->fill($request->all())->save();
+		Session::flash('flash_message','Datos actualizados exitosamente');
+		return redirect()->to('alumno')->with('new_token', csrf_token());
 	}
 
 	/**
@@ -80,7 +77,9 @@ class AlumnosController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Alumno::find($id)->delete();
+		Session::flash('flash_message','Registro Eliminado satisfactoriamente');
+		return redirect('alumno');
 	}
 
 }

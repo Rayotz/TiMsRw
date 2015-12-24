@@ -14,10 +14,14 @@ class CreateAlumnoTable extends Migration {
 	public function up()
 	{
 		Schema::create('alumnos', function (Blueprint $table) {
-			$table->string('alu_rol',30);
-			$table->string('alu_grupo',100);
-			$table->integer('alu_tipo');
+			$table->string('nombre',30);
+			$table->string('apellido',100);
+			$table->string('rut',12)->unique();
+			$table->char('rol')->default('NULL');
+			$table->string('email',50)->nullable();
+			$table->increments('id');
 			$table->timestamps();
+
 		});
 	}
 
