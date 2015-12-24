@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CrearPropuestaProfesorRequest;
+use App\Tema;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Html;
 use App\Http\Requests;
@@ -26,7 +28,6 @@ class PropuestaProfesorController extends Controller
 
     public function getValidacion()
     {
-      // $profesor= PropuestaProfesor::create($request->all());
         return $this->layout = view('profesor.index');
     }
 
@@ -45,13 +46,11 @@ class PropuestaProfesorController extends Controller
 
             $archivo = $file->getClientMimeType();
             $extension = $file->getClientOriginalExtension();
-
             $upload = $file->move($path, $archivo);
 
             $inputs=\Illuminate\Support\Facades\Input::All();
             $reglas=Array(
-                'titulo'=>'required|min:7',
-                'archivo'=>'requied'
+                'titulo'=>'required|min:7'
             );
             $mensaje=Array(
                 "required"=>"Este campo es obligatorio",
@@ -72,21 +71,26 @@ class PropuestaProfesorController extends Controller
                     return Redirect::back()
                         ->withErrors($validar);
                 }else{
-
+                    $n=new Tema();
+                    $n->tem_nombre_proyecto=$inputs["titulo"];
+                    //$n->tem_ruta_proyecto=$inputs[""];
+                    $n->save();
                 }
 
-                if($upload){
-                    Session::flash('mensaje', 'El archivo se guardo con exito.');
-                    return $this->layout = view('profesor.index');
+            }
 
-                }else{
-                    Session::flash('mensaje', 'No se pudo subir el archivo.');
-                    return $this->layout = view('profesor.index');
-                }
+            if($upload){
+                Session::flash('mensaje', 'Se ha ingresado el proyecto');
+                return $this->layout = view('profesor.index');
+
+            }else{
+                Session::flash('mensaje', 'No se pudo subir el archivo.');
+                return $this->layout = view('profesor.index');
             }
 
         }
     }
-    
+
+
 
 }
