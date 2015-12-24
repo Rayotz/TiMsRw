@@ -1,7 +1,7 @@
 @extends('layouts.masterLogin')
 
 @section('titulo')
-SAGGAP
+    SAGGAP
 @stop
 
 @section('formulario')
@@ -27,6 +27,5 @@ SAGGAP
             location.href="/registrarProfe"
         }
     </script>
-
-
 </form>
+@stop
