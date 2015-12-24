@@ -9,6 +9,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::resource('/grupo','GruposController');
 Route::controller("/Propuesta/profesor", 'PropuestaProfesorController');
 Route::controller('/registrarProfesor','controladorRegistroProfesor');
 Route::controller('/registrarAlumno','controlladorRegistroAlumno');
